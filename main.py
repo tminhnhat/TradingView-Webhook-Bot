@@ -28,7 +28,7 @@ def webhook2():
             key2 = data["key"]
             if key2 == config.sec_key2:
                 print(get_timestamp(), "Alert Received & Sent!")
-                delay(3)
+                time.sleep(3)
                 send_alert(data)
                 return "Sent alert", 200
 

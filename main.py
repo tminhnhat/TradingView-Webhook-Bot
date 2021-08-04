@@ -20,14 +20,15 @@ def get_timestamp():
     return timestamp
 
 
-@app.route("/webhook", methods=["POST"])
-def webhook():
+@app.route("/webhook2", methods=["POST"])
+def webhook2():
     try:
         if request.method == "POST":
             data = request.get_json()
-            key = data["key"]
-            if key == config.sec_key:
+            key2 = data["key"]
+            if key2 == config.sec_key2:
                 print(get_timestamp(), "Alert Received & Sent!")
+                delay(3)
                 send_alert(data)
                 return "Sent alert", 200
 

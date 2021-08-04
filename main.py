@@ -26,12 +26,13 @@ def webhook():
         if request.method == "POST":
             data = request.get_json()
             key = data["key"]
+            sleeptime = data["sleeptime"]
             if key == config.sec_key1:
                 print(get_timestamp(), "Alert Received & Sent!")
                 send_alert(data)
                 return "Sent alert", 200
             elif key == config.sec_key2:
-                time.sleep(3)
+                time.sleep(sleeptime)
                 print(get_timestamp(), "Alert Received & Sent!")
                 send_alert(data)
                 return "Sent alert", 200

@@ -8,6 +8,8 @@ import smtplib
 import ssl
 from email.mime.text import MIMEText
 
+
+
 import tweepy
 from discord_webhook import DiscordEmbed, DiscordWebhook
 from slack_webhook import Slack
@@ -58,7 +60,7 @@ def send_alert(data):
 
     if config.send_slack_alerts:
         try:
-            slack = Slack(url="https://hooks.slack.com/services/" + data["slack"])
+            slack = Slack(url="http://13.212.99.58:8888/frostybot/" + data["slack"])
             slack.post(text=data["msg"])
         except KeyError:
             slack = Slack(

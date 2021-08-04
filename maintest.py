@@ -1,7 +1,7 @@
 # ----------------------------------------------- #
 # Plugin Name           : TradingView-Webhook-Bot #
 # Author Name           : fabston                 #
-# File Name             : main.py                 #
+# File Name             : maintest.py                 #
 # ----------------------------------------------- #
 
 import json
@@ -20,13 +20,13 @@ def get_timestamp():
     return timestamp
 
 
-@app.route("/webhook", methods=["POST"])
-def webhook():
+@app.route("/webhook1", methods=["POST"])
+def webhook1():
     try:
         if request.method == "POST":
             data = request.get_json()
-            key = data["key"]
-            if key == config.sec_key:
+            key1 = data["key"]
+            if key1 == config.sec_key1:
                 print(get_timestamp(), "Alert Received & Sent!")
                 send_alert(data)
                 return "Sent alert", 200

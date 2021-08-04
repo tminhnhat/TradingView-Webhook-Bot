@@ -60,11 +60,11 @@ def send_alert(data):
 
     if config.send_slack_alerts:
         try:
-            slack = Slack(url="http://13.212.99.58:8888/frostybot/" + data["slack"])
+            slack = Slack(url="http://127.0.0.1:8888/frostybot" + data["slack"])
             slack.post(text=data["msg"])
         except KeyError:
             slack = Slack(
-                url="https://hooks.slack.com/services/" + config.slack_webhook
+                url="http://127.0.0.1:8888/frostybot" + config.slack_webhook
             )
             slack.post(text=data["msg"])
         except Exception as e:

@@ -9,10 +9,12 @@
 # "key":"9T2q394M92", "telegram":"-1001298977502", "discord":"789842349670960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3", "msg":"Long #{{ticker}} at `{{close}}`"
 # }
 
-sec_key = (
-    ""  # Can be anything. Has to match with "key" in your TradingView alert message
+sec_key1 = (
+    "lenh1"  # Can be anything. Has to match with "key" in your TradingView alert message. Lenh cancel, close
 )
-
+sec_key2 = (
+    "lenh2"  # Can be anything. Has to match with "key" in your TradingView alert message. lenh order trade
+)
 # Telegram Settings
 send_telegram_alerts = False
 tg_token = ""  # Bot token. Get it from @Botfather
@@ -23,7 +25,7 @@ send_discord_alerts = False
 discord_webhook = ""  # Discord Webhook URL (https://support.discordapp.com/hc/de/articles/228383668-Webhooks-verwenden)
 
 # Slack Settings
-send_slack_alerts = False
+send_slack_alerts = True
 slack_webhook = ""  # Slack Webhook URL (https://api.slack.com/messaging/webhooks)
 
 # Twitter Settings

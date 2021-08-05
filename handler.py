@@ -69,10 +69,10 @@ def send_alert(data):
             slack.post(text=data["msg"])
         except Exception as e:
             print("[X] Slack Error:\n>", e)
-    if config.send_curl:
+    if config.send_curl_alerts:
         try:
             headers = {'Content-Type: text/plain; charset=utf-8'}
-            curl = requests.post(config.curl_webhook, data=text=data["msg"])
+            curl = requests.post(config.curl_webhook, data=data["msg"], headers=headers)
             
         except Exception as e:
             print("[X] Curl Error:\n>", e)

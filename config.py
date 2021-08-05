@@ -25,8 +25,12 @@ send_discord_alerts = False
 discord_webhook = ""  # Discord Webhook URL (https://support.discordapp.com/hc/de/articles/228383668-Webhooks-verwenden)
 
 # Slack Settings
-send_slack_alerts = True
+send_slack_alerts = False
 slack_webhook = ""  # Slack Webhook URL (https://api.slack.com/messaging/webhooks)
+
+# Curl Settings
+send_curl_alerts = True
+curl_webhook = "http://127.0.0.1:8888/frostybot"  
 
 # Twitter Settings
 send_twitter_alerts = False

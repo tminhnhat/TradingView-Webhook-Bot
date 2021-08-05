@@ -71,8 +71,8 @@ def send_alert(data):
             print("[X] Slack Error:\n>", e)
     if config.send_curl_alerts:
         try:
-            headers = {'Content-Type: text/plain; charset=utf-8'}
-            curl = requests.post(config.curl_webhook, data=data["msg"], headers=headers)
+            headers1 = {'content-type': 'text/plain', 'Accept-Charset': 'UTF-8'}
+            curl = requests.post(config.curl_webhook, data=data["msg"], headers=headers1)
             
         except Exception as e:
             print("[X] Curl Error:\n>", e)

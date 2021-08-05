@@ -7,7 +7,7 @@
 import smtplib
 import ssl
 from email.mime.text import MIMEText
-
+import requests
 
 
 import tweepy
@@ -69,7 +69,13 @@ def send_alert(data):
             slack.post(text=data["msg"])
         except Exception as e:
             print("[X] Slack Error:\n>", e)
-
+    if config.send_curl:
+        try:
+            headers = {'Content-Type: text/plain; charset=utf-8'}
+            curl = requests.post(config.curl_webhook, data=text=data["msg"])
+            
+        except Exception as e:
+            print("[X] Curl Error:\n>", e)
     if config.send_twitter_alerts:
         tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
         tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)

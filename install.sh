@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 export DEBIAN_PRIORITY=critical
 sudo -E apt-get -qy update >> /tmp/install.log 2>&1
 
-
+sudo apt install -y python3.8-venv
 echo "Tai code tu github ve"
 sudo git clone https://github.com/tminhnhat/TradingView-Webhook-Bot.git >> /tmp/install.log 2>&1
 
